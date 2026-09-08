@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: staging
+    database: "{{ env_var('DATABASE_NAME') }}"
+    schema: staging
+
+    tables:
+      - name: production
+        description: "This table contains production data"
+      - name: products
+      - name: orders
+      - name: order_items
+      - name: inventory
+      - name: material_usage
+      - name: employees
+      - name: maintenance
+      - name: quality_checks
+      - name: customers
+      - name: production
+      - name: customers

@@ -1,0 +1,76 @@
+[0m22:59:42.835283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E108C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E108C390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E108CB90>]}
+
+
+============================== 22:59:42.849809 | 99a8a280-a9e5-4ee0-ad78-2a0340187e2e ==============================
+[0m22:59:42.849809 [info ] [MainThread]: Running with dbt=1.12.3
+[0m22:59:42.893961 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Bamidele\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init', 'log_path': 'logs'}
+[0m22:59:54.899394 [debug] [MainThread]: Starter project path: C:\Users\Bamidele\Documents\dbtpost\dbt-postgres\post\Lib\site-packages\dbt\include\starter_project
+[0m22:59:55.065977 [info ] [MainThread]: Setting up your profile.
+[0m23:01:44.449803 [info ] [MainThread]: Profile manufact written to C:\Users\Bamidele\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m23:01:44.463799 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m23:01:44.466805 [info ] [MainThread]: dbt version: 1.12.3
+[0m23:01:44.467802 [info ] [MainThread]: python version: 3.11.4
+[0m23:01:44.469802 [info ] [MainThread]: python path: C:\Users\Bamidele\Documents\dbtpost\dbt-postgres\post\Scripts\python.exe
+[0m23:01:44.471803 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m23:01:44.593599 [info ] [MainThread]: Using profiles dir at C:\Users\Bamidele\.dbt
+[0m23:01:44.595598 [info ] [MainThread]: Using profiles.yml file at C:\Users\Bamidele\.dbt\profiles.yml
+[0m23:01:44.596439 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Bamidele\Documents\dbtpost\dbt-postgres\manufact\dbt_project.yml
+[0m23:01:44.600435 [info ] [MainThread]: adapter type: postgres
+[0m23:01:44.601436 [info ] [MainThread]: adapter version: 1.11.0
+[0m23:01:44.865912 [info ] [MainThread]: Configuration:
+[0m23:01:44.866918 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:01:44.868913 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:01:44.869915 [info ] [MainThread]: Required dependencies:
+[0m23:01:44.870918 [debug] [MainThread]: Executing "git --help"
+[0m23:01:44.977087 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:01:44.979087 [debug] [MainThread]: STDERR: "b''"
+[0m23:01:44.980088 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:01:44.981088 [info ] [MainThread]: Connection:
+[0m23:01:44.982090 [info ] [MainThread]:   host: pg-38465cef-eomobamidele-84f0.j.aivencloud.com
+[0m23:01:44.983090 [info ] [MainThread]:   port: 10780
+[0m23:01:44.984088 [info ] [MainThread]:   user: avnadmin
+[0m23:01:44.986089 [info ] [MainThread]:   database: qnt_staging
+[0m23:01:44.989094 [info ] [MainThread]:   schema: staging
+[0m23:01:44.991093 [info ] [MainThread]:   connect_timeout: 10
+[0m23:01:44.994093 [info ] [MainThread]:   role: None
+[0m23:01:44.997094 [info ] [MainThread]:   search_path: None
+[0m23:01:45.001090 [info ] [MainThread]:   keepalives_idle: 0
+[0m23:01:45.005093 [info ] [MainThread]:   sslmode: None
+[0m23:01:45.018343 [info ] [MainThread]:   sslcert: None
+[0m23:01:45.021347 [info ] [MainThread]:   sslkey: None
+[0m23:01:45.032361 [info ] [MainThread]:   sslrootcert: None
+[0m23:01:45.035339 [info ] [MainThread]:   application_name: dbt
+[0m23:01:45.040346 [info ] [MainThread]:   autocommit: False
+[0m23:01:45.045347 [info ] [MainThread]:   retries: 1
+[0m23:01:45.056374 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m23:01:46.072794 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m23:01:51.759678 [debug] [MainThread]: Using postgres connection "debug"
+[0m23:01:51.761207 [debug] [MainThread]: On debug: select 1 as id
+[0m23:01:51.763207 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:01:56.545075 [debug] [MainThread]: SQL status: SELECT 1 in 4.783 seconds
+[0m23:01:56.547076 [debug] [MainThread]: On debug: Close
+[0m23:01:56.559076 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:01:56.561078 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:01:56.563078 [info ] [MainThread]: Your new dbt project "manufact" was created!
+Initialized new project in C:\Users\Bamidele\Documents\dbtpost\dbt-postgres\manufact\manufact
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:01:56.566202 [debug] [MainThread]: Command `dbt init` succeeded at 23:01:56.566202 after 134.10 seconds
+[0m23:01:56.567202 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:01:56.569203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278D8E3AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E130C250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E10C3F50>]}
+[0m23:01:56.570202 [debug] [MainThread]: Flushing usage events
+[0m23:01:58.290011 [debug] [MainThread]: An error was encountered while trying to flush usage events
