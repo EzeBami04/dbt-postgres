@@ -1,0 +1,14 @@
+manufact:
+  target: postgres_dev
+
+  outputs:
+    postgres_dev:
+      type: postgres
+      threads: 2
+      host: "{{ env_var('HOST') }}"
+      user: "{{ env_var('USER') }}"
+      password: "{{ env_var('PASSWORD') }}"
+      port: 10780
+      database: "{{ env_var('DATABASE') }}"
+      schema: staging
+      

@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DATABASE') }}"
+    schema: staging
+    tables:
+      - name: customers
+      - name: employees
+      - name: inventory
+      - name: orders
+      - name: order_items
+      - name: production
+      - name: products
+      - name: quality_checks
+      - name: material_usage
+      - name: maintenance
+
+models:
+  - name: stg_customers
+    description: "Customers table"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_employees
+    description: "Employees table"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_inventory
+    description: "Inventory table"
+    columns:
+      - name: inventory_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_orders
+    description: "Orders table"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_order_items
+    description: "Order Items table"
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_production
+    description: "Production table"
+    columns:
+      - name: production_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_products
+    description: "Products table"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique

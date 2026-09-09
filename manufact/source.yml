@@ -1,12 +1,11 @@
 version: 2
 sources:
   - name: staging
-    database: "{{ env_var('DATABASE_NAME') }}"
-    schema: staging
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
 
     tables:
       - name: production
-        description: "This table contains production data"
       - name: products
       - name: orders
       - name: order_items
@@ -17,4 +16,3 @@ sources:
       - name: quality_checks
       - name: customers
       - name: production
-      - name: customers
