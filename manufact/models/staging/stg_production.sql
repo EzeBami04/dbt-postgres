@@ -10,11 +10,13 @@ with production as (
         cast(produced_quantity as int) as qty_produced, 
         cast(good_quantity as bigint) as good_qty,
         cast(defective_quantity as int) as defective_qty,
-        round(cast(downtime_minutes as decimal(2)), 2) as downtime_min,
-        round(cast(production_time_minutes as decimal(2)), 2) as production_time_min,
-        round(cast(material_cost as decimal(2)), 2) as material_cost, 
-       round(cast(labor_cost as decimal(2)), 2) as labor_cost,
-        round(cast(energy_cost as decimal(2)), 2) as energy_cost
+        cast(downtime_minutes as numeric(10, 2)) as downtime_min,
+        cast(production_time_minutes as numeric(10, 2)) as production_time_min,
+        cast(material_cost as numeric(10, 2)) as material_cost, 
+        cast(labor_cost as numeric(10, 2)) as labor_cost,
+        cast(energy_cost as numeric(10, 2)) as energy_cost,
+        cast(maintenance_required as boolean) as maintenance_required,
+        cast(shift as varchar(10)) as shift
     from {{ source('staging', 'production') }}
     WHERE production_date BETWEEN '2025-01-01' AND '2026-08-31'
     )
