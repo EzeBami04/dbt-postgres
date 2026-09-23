@@ -2,7 +2,7 @@
 
 This repository contains a dbt project for a PostgreSQL-based manufacturing data warehouse. It ingests staging source tables, standardizes them into staging models, and builds curated dimension and fact tables for analytics and operational reporting.
 
-The project is organized as a dbt package under the [manufact](manufact) folder and includes a seeded data model diagram in [utils/images/data_model.jpg](utils/images/data_model.jpg).
+The project is organized as a dbt package under the [manufact](manufact) folder and includes a seeded data model diagram in ![image](utils/images/data_model.jpg).
 
 ## Overview
 
