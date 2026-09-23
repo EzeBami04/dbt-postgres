@@ -17,6 +17,8 @@ clean-targets:
 models:
   manufact:
     staging:
+      +schema: staging
       +materialized: view
     ods:
+      +schema: ods
       +materialized: table
