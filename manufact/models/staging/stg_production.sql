@@ -1,5 +1,5 @@
 {{config(materialized='view')}}
-with stg_production as (
+with production as (
     select cast(production_id as varchar(50)) as production_id,
         cast(production_date as Date) as production_date,
         cast(product_id as varchar(10)) as product_id, 
@@ -19,19 +19,6 @@ with stg_production as (
         cast(shift as varchar(10)) as shift
     from {{ source('staging', 'production') }}
     WHERE production_date BETWEEN '2025-01-01' AND '2026-08-31'
-    ),
-    material as(
-        select cast(material_id as varchar(10)) as material_id,
-        cast(production_id as varchar(50)) as production_id
-        from {{ source('staging', 'material_usage') }}
-    ), 
-    production as (
-    select a.production_id, a.production_date, a.product_id, a.batch_id, a.machine_id, a.operator_id,
-        a.planned_qty, a.qty_produced, a.good_qty, a.defective_qty, a.downtime_min,
-        a.production_time_min, a.material_cost, a.labor_cost, a.energy_cost,
-        a.maintenance_required, a.shift, b.material_id
-    from stg_production a
-    left join material b on a.production_id = b.production_id
 )
 select *
 from production
