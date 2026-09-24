@@ -1,3 +1,4 @@
 dbt-core
 dbt-postgres
 sqlfluff
+faker
