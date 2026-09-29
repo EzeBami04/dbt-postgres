@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with production as (
     select cast(production_id as varchar(50)) as production_id,
         cast(production_date as Date) as production_date,

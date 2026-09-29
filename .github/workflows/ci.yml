@@ -1,0 +1,27 @@
+name: Integration and test
+on:
+    push:
+        branches: ["- dev"]
+    pull_request:
+        branches: ["- main"]
+jobs:
+    dbt-app:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: action/checkout@v6
+            
+            - name: setup python
+              uses: action/setup-python@v6
+              with:
+                "python-version": "3.12"
+            
+            - name: install dependencies
+              run: |
+                pip -m pip install --upgrade pip
+                pip install -r requirements.txt
+            # - name: set up environment variables
+            #   env:
+            #     DATABASE: "$ {{ secrets.DATABSE }}"
+            #     SCHEMA: "$ {{ secrets.SCHEMA }}"
+

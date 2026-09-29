@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with materials as (
     select 
         cast(machine_id as varchar(10)) as material_id,

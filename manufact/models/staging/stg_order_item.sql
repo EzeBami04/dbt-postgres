@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with items as (
     select 
         cast(order_item_id as varchar(12)) as order_item_id,

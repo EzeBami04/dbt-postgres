@@ -18,7 +18,10 @@ models:
   manufact:
     staging:
       +schema: staging
-      +materialized: view
+      +materialized: ephemeral
     ods:
       +schema: ods
       +materialized: table
+    mart:
+      +schema: mart
+      +materialized: view

@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with quality_checks as (
     select *
     from {{ source('staging', 'quality_checks') }}

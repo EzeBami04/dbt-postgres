@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with maintenance as (
     select 
         cast(maintenance_id as varchar(12)) as maintenance_id,
