@@ -7,7 +7,8 @@ with items as (
         cast(quantity as int) as quantity,
         cast(unit_price as numeric(10,2)) as unit_price,
         cast(discount as numeric(10,2)) as discount,
-        cast(line_amount as numeric(10,2)) as line_amount
+        cast(line_amount as numeric(10,2)) as line_amount,
+        case when last_updated is null then current_timestamp else cast(last_updated as timestamp) end as last_updated
     from {{ source('staging', 'order_items') }}
 )
 

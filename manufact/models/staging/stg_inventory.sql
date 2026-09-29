@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with inventory as (
     select 
         cast(movement_id as varchar(12)) as movement_id,

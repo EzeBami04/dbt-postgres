@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with orders as (
     select 
         cast(order_date as date) as order_date,

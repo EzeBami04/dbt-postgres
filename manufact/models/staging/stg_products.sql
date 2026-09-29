@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with products as (
     select 
         cast(created_at as date) as created_at,
