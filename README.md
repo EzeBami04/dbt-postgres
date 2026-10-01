@@ -41,7 +41,7 @@ The dbt structure follows a common layered pattern:
 │   ├── macros/
 │   ├── models/
 │   │   ├── schema.yml       # model-level tests and descriptions
-│   │   ├── staging/         # typed/staged source model views
+│   │   ├── staging/         # typed/staged source models
 │   │   └── ods/             # curated dimensions and facts
 │   │   └── mart/            # Planned agreggatio and analytics
 │   ├── seeds/

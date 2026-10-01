@@ -1,4 +1,4 @@
-{{config(materialized='view')}}
+{{config(materialized='ephemeral')}}
 with employees as (
     select 
         cast(hire_date as date) as hire_date,

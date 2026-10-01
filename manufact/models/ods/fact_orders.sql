@@ -8,5 +8,5 @@ select *
 from orders
 
 {% if is_incremental() %}
-    where order_date >= (select max(order_date) - interval '1 day' from {{ this }})
+    where order_date >= (select max(order_date) -  from {{ this }})
 {% endif %}
