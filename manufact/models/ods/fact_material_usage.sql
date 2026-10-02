@@ -8,5 +8,5 @@ select *
 from material_usage
 
 {% if is_incremental() %}
-    where created_at >= (select max(created_at) - interval '1 day' from {{ this }})
+    where created_at >= (select max(created_at) - from {{ this }})
 {% endif %}

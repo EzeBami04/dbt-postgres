@@ -13,21 +13,15 @@ with revenue as (
 total_cost as (
     select
         product_id,
-        product_name,
-        sum(
-            coalesce(material_cost, 0)
-            + coalesce(labor_cost, 0)
-            + coalesce(energy_cost, 0)
-        ) as total_cost
+        sum(coalesce(material_cost, 0) + coalesce(labor_cost, 0) + coalesce(energy_cost, 0)) as total_cost
     from {{ ref('fact_production') }}
-    group by product_id, product_name
-)
-
+    group by product_id
+    )
 select
-    c.product_name,
+    c.product_id,
     r.total_revenue,
     c.total_cost,
-    r.total_revenue - c.total_cost as profit,
+    (r.total_revenue - c.total_cost) as profit,
     round(
         (r.total_revenue - c.total_cost) / nullif(r.total_revenue, 0),
         2

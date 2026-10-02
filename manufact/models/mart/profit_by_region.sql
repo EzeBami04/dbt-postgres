@@ -2,7 +2,7 @@
 
 with sales as (
     select
-        c.region,
+        c.country ,
         i.product_id,
         sum(i.quantity) as units_sold,
         sum(i.quantity * i.unit_price - i.discount) as revenue
@@ -11,19 +11,19 @@ with sales as (
         on o.order_id = i.order_id
     inner join {{ ref('dim_customers') }} c
         on o.customer_id = c.customer_id
-    group by c.region, i.product_id
+    group by c.country, i.product_id
 ),
 
 unit_cost as (
     select
         product_id,
-        avg(unit_price) as cost_per_unit  -- production-side cost column
+        avg(unit_price) as cost_per_unit  
     from {{ ref('fact_production') }}
     group by product_id
 )
 
 select
-    s.region,
+    s.country as region,
     sum(s.revenue) as total_revenue,
     sum(s.units_sold * u.cost_per_unit) as total_cost,
     sum(s.revenue) - sum(s.units_sold * u.cost_per_unit) as profit,
@@ -35,4 +35,4 @@ select
 from sales s
 inner join unit_cost u
     on s.product_id = u.product_id
-group by s.region
+group by s.country
