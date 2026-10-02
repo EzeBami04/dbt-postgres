@@ -1,6 +1,6 @@
-{{ config(materialized='view') }}
+{{ config(materialized='view', cluster_by=['product_id', 'order_id']) }}
 
-with order_details as (
+with order_details as ( 
     select
         i.product_id,
         sum(i.quantity * i.unit_price - i.discount) as revenue
@@ -9,7 +9,6 @@ with order_details as (
         on o.order_id = i.order_id
     group by i.product_id
 )
-
 select
     p.product_id,
     p.product_name,
